@@ -4,7 +4,6 @@
 
 <template>
   <v-app>
-    auth layouts
     <slot/>
   </v-app>
 </template>

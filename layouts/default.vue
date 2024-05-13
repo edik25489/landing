@@ -4,7 +4,6 @@
 
 <template>
 <v-app>
-  first
   <slot/>
 </v-app>
 </template>

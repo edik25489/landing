@@ -15,7 +15,8 @@ definePageMeta({
     ></v-avatar>
 
     <v-btn
-      color="green-darken-4"
+        class="hidden-md-and-up"
+        color="green-darken-4"
     >
       Разработка сайтов
     </v-btn>
