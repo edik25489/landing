@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+
+const drawer = ref(false)
+const group = ref(null)
+
+watch(group, () => {
+  drawer.value = false
+})
 definePageMeta({
   layout:'default'
 })
@@ -7,21 +15,34 @@ definePageMeta({
 <template>
 
   <v-app-bar :elevation="2">
-    <v-avatar
-      class="hidden-md-and-up mx-2"
-      color="green-darken-1"
-      size="32"
-      icon="mdi-menu"
-    ></v-avatar>
+    <v-app-bar-nav-icon
+      variant="text"
+      @click.stop="drawer = !drawer"
+      v-if="$vuetify.display.sm || $vuetify.display.xs"
+    ></v-app-bar-nav-icon>
 
+    <v-spacer/>
     <v-btn
-        class="hidden-md-and-up"
-        color="green-darken-4"
+      v-if="$vuetify.display.sm"
+      color="green-darken-2"
+      variant="text"
     >
-      Разработка сайтов
+      разработка сайтов
     </v-btn>
+    <template v-if="$vuetify.display.mdAndUp">
+      <v-btn
+        variant="text"
+        href="/test/admin"
+      >Админ - панель</v-btn>
+
+      <v-btn
+        variant="text"
+        href="/test/account"
+      >Личный кабинет</v-btn>
+    </template>
     <v-spacer/>
       <v-btn
+        class="mr-4"
         variant="tonal"
         href="/login"
       >
@@ -29,7 +50,24 @@ definePageMeta({
         Войти
       </v-btn>
   </v-app-bar>
+  <v-navigation-drawer
+    v-model="drawer"
+    :location="$vuetify.display.smAndDown ? 'left' : undefined"
+    temporary
+  >
+      <v-list-item
+        link
+        title="Админ - панель"
+        href="/test/admin"
+      ></v-list-item>
+      <v-list-item
+        link
+        title="Личный кабинет"
+        href="/test/account"
+      >
+      </v-list-item>
 
+  </v-navigation-drawer>
 </template>
 
 <style scoped>
