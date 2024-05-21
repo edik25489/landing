@@ -5,35 +5,34 @@
 <template>
   <v-container>
     <v-row>
-      <v-col cols="12" sm="6" class="d-flex flex-column justify-start">
+      <v-col cols="12" sm="6" class="bg-grey-lighten-5 d-flex flex-column justify-start align-lg-center">
         <p class="text-green-darken-2 text-h5 text-sm-h4 text-md-h3">
           Разработка сайтов и Web-приложений
         </p>
-        <v-list>
+        <v-list bg-color="grey-lighten-5">
 
           <v-list-item
-              color="primary"
               variant="flat"
           >
             <v-icon color="green" icon="mdi-check-circle"></v-icon>
             Индивидуальный подход к разработке
           </v-list-item>
           <v-list-item
-              color="primary"
+
               variant="flat"
           >
             <v-icon color="green" icon="mdi-check-circle"></v-icon>
             Соблюдение сроков
           </v-list-item>
           <v-list-item
-              color="primary"
+
               variant="flat"
           >
             <v-icon color="green" icon="mdi-check-circle"></v-icon>
             Поддержка и сопровождение
           </v-list-item>
         </v-list>
-        <v-btn width="400" elevation="8">
+        <v-btn width="400" elevation="8" class="mt-4">
           <template #prepend>
             <v-icon color="green" icon="mdi-bell-plus"></v-icon>
           </template>
@@ -43,7 +42,7 @@
         </v-btn>
       </v-col>
       <v-col sm="6" class="d-none d-sm-block">
-        <v-sheet color="#7DF1E8" height="350" class="w-100 rounded-ts-pill"></v-sheet>
+        <v-sheet color="#7DF1E8" height="400" class="w-100 rounded-ts-pill"></v-sheet>
       </v-col>
     </v-row>
     <v-row class="d-none d-sm-flex">

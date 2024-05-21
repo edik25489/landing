@@ -77,6 +77,7 @@ definePageMeta({
   <v-main class="mt-4">
     <SectionHero/>
     <SectionFramework/>
+    <SectionPrice/>
   </v-main>
 
 </template>

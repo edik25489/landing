@@ -4,8 +4,8 @@
 
 <template>
 <v-container
-    class="mt-4"
-    style="background: linear-gradient(white, lightgreen)"
+    class="my-10"
+    style="background: linear-gradient(#FAFAFA, #FAFAFA, lightgreen, #FAFAFA)"
 >
   <v-row justify="center">
     <v-col cols="12" align-self="center">
