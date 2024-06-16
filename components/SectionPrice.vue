@@ -2,12 +2,12 @@
 const low = [
   {
     from: 'Разработка макета',
-    message: `Сроки зависят от сложности или наличия макета Заказчика`,
+    message: `Сроки зависят от сложности дизайна сайта`,
     color: 'deep-purple-lighten-1',
   },
   {
     from: 'Выгрузка на хостинг',
-    message: 'Подключение или покупка домена Заказчика',
+    message: 'Подключение или покупка домена',
     color: 'green',
   },
   {
@@ -23,48 +23,45 @@ const low = [
 ]
 const medium = [
   {
-    from: 'You',
-    message: `Sure, I'll see you later.`,
+    from: 'Управление доступом',
+    message: `Установка прав доступа`,
 
     color: 'deep-purple-lighten-1',
   },
   {
-    from: 'John Doe',
-    message: 'Yeah, sure. Does 1:00pm work?',
+    from: 'Панель администратора',
+    message: 'Настраиваемый личный кабинет администратора',
 
     color: 'green',
   },
   {
-    from: 'You',
-    message: 'Did you still want to grab lunch today?',
+    from: 'Интернет-магазин',
+    message: 'Возможность продажи и обратной связи с клиентом',
 
     color: 'deep-purple-lighten-1',
   },
 ]
 const max = [
   {
-    from: 'You',
-    message: `Sure, I'll see you later.`,
-    time: '10:42am',
+    from: 'Статистика',
+    message: `Настройка отчетности или статистики`,
     color: 'deep-purple-lighten-1',
   },
   {
-    from: 'John Doe',
-    message: 'Yeah, sure. Does 1:00pm work?',
-    time: '10:37am',
+    from: 'CRM',
+    message: 'Разработка функционала CRM-систем',
     color: 'green',
   },
   {
-    from: 'You',
-    message: 'Did you still want to grab lunch today?',
-    time: '9:47am',
+    from: 'Дополнительные услуги',
+    message: 'Настройка и разработка интересов Заказчика',
     color: 'deep-purple-lighten-1',
   },
 ]
 </script>
 
 <template>
-<v-container class="my-4" style="background: linear-gradient(#FAFAFA, #FAFAFA, lightgreen, #FAFAFA)">
+<v-container class="my-4">
   <v-row justify="center" class="mb-4">
     <v-col cols="12" align-self="center">
       <p class="text-green-darken-3 text-center text-h5 text-sm-h4">
@@ -73,7 +70,8 @@ const max = [
     </v-col>
   </v-row>
   <v-row>
-    <v-card class="mx-auto my-4" max-width="400">
+    <v-col cols="12" md="4">
+      <v-card class="mx-auto my-4" max-width="400">
 
         <v-toolbar color="green-lighten-5">
           <template v-slot:prepend>
@@ -85,99 +83,110 @@ const max = [
         </v-toolbar>
 
 
-      <v-card-text>
-        <div class="font-weight-bold ms-1 mb-2 text-center">Условия тарифа</div>
+        <v-card-text>
+          <div class="font-weight-bold ms-1 mb-2 text-center">Условия тарифа</div>
 
-        <v-timeline align="start" density="compact">
-          <v-timeline-item
-              v-for="message in low"
-              :key="message.from"
-              :dot-color="message.color"
-              size="x-small"
-          >
-            <div class="mb-3">
-              <div class="font-weight-normal">
-                <strong>{{ message.from }}</strong>
+          <v-timeline align="start" density="compact">
+            <v-timeline-item
+                v-for="message in low"
+                :key="message.from"
+                :dot-color="message.color"
+                size="x-small"
+            >
+              <div class="mb-3">
+                <div class="font-weight-normal">
+                  <strong>{{ message.from }}</strong>
+                </div>
+
+                <div>{{ message.message }}</div>
               </div>
+            </v-timeline-item>
+          </v-timeline>
+          <div class="font-weight-bold ms-1 mb-2">от 20 000 руб.</div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col cols="12" md="4">
+      <v-card class="mx-auto" max-width="400">
 
-              <div>{{ message.message }}</div>
-            </div>
-          </v-timeline-item>
-        </v-timeline>
-        <div class="font-weight-bold ms-1 mb-2">от 20 000 руб.</div>
-      </v-card-text>
-    </v-card>
-    <v-card class="mx-auto" max-width="400">
+        <v-toolbar color="green-darken-1">
+          <template v-slot:prepend>
+            <v-btn icon="mdi mdi-battery-60"></v-btn>
+          </template>
 
-      <v-toolbar color="green-darken-1">
-        <template v-slot:prepend>
-          <v-btn icon="mdi mdi-battery-60"></v-btn>
-        </template>
+          <v-toolbar-title class="text-h6" text="Стандарт"></v-toolbar-title>
 
-        <v-toolbar-title class="text-h6" text="Стандарт"></v-toolbar-title>
-
-      </v-toolbar>
+        </v-toolbar>
 
 
-      <v-card-text>
-        <div class="font-weight-bold ms-1 mb-2 text-center">
-          <v-icon icon="mdi mdi-plus-circle" color="green" size="20"></v-icon>
-          Условия Базового тарифа
-        </div>
+        <v-card-text>
+          <div class="font-weight-bold ms-1 mb-2 text-center">
+            <v-icon icon="mdi mdi-plus-circle" color="green" size="20"></v-icon>
+            Условия Базового тарифа
+          </div>
 
-        <v-timeline align="start" density="compact">
-          <v-timeline-item
-              v-for="message in medium"
-              :key="message.from"
-              :dot-color="message.color"
-              size="x-small"
-          >
-            <div class="mb-4">
-              <div class="font-weight-normal">
-                <strong>{{ message.from }}</strong>
+          <v-timeline align="start" density="compact">
+            <v-timeline-item
+                v-for="message in medium"
+                :key="message.from"
+                :dot-color="message.color"
+                size="x-small"
+            >
+              <div class="mb-4">
+                <div class="font-weight-normal">
+                  <strong>{{ message.from }}</strong>
+                </div>
+
+                <div>{{ message.message }}</div>
               </div>
+            </v-timeline-item>
+          </v-timeline>
+          <div class="font-weight-bold ms-1 mb-2">от 40 000 руб.</div>
+        </v-card-text>
+      </v-card>
+    </v-col>
+    <v-col cols="12" md="4">
+      <v-card class="mx-auto my-4" max-width="400">
 
-              <div>{{ message.message }}</div>
-            </div>
-          </v-timeline-item>
-        </v-timeline>
-        <div class="font-weight-bold ms-1 mb-2">от 40 000 руб.</div>
-      </v-card-text>
-    </v-card>
-    <v-card class="mx-auto my-4" max-width="400">
+        <v-toolbar color="green-darken-4">
+          <template v-slot:prepend>
+            <v-btn icon="mdi mdi-battery-charging-high"></v-btn>
+          </template>
 
-      <v-toolbar color="green-darken-4">
-        <template v-slot:prepend>
-          <v-btn icon="mdi mdi-battery-charging-high"></v-btn>
-        </template>
+          <v-toolbar-title class="text-h6" text="Максимальный"></v-toolbar-title>
 
-        <v-toolbar-title class="text-h6" text="Базовый"></v-toolbar-title>
-
-      </v-toolbar>
+        </v-toolbar>
 
 
-      <v-card-text>
-        <div class="font-weight-bold ms-1 mb-2">Условия тарифа</div>
+        <v-card-text>
+          <div class="font-weight-bold ms-1 mb-2">
+            <v-icon icon="mdi mdi-plus-circle" color="green" size="20"></v-icon>
+            Условия Стандарт тарифа
+          </div>
 
-        <v-timeline align="start" density="compact">
-          <v-timeline-item
-              v-for="message in max"
-              :key="message.time"
-              :dot-color="message.color"
-              size="x-small"
-          >
-            <div class="mb-4">
-              <div class="font-weight-normal">
-                <strong>{{ message.from }}</strong> @{{ message.time }}
+          <v-timeline align="start" density="compact">
+            <v-timeline-item
+                v-for="message in max"
+                :key="message.time"
+                :dot-color="message.color"
+                size="x-small"
+            >
+              <div class="mb-4">
+                <div class="font-weight-normal">
+                  <strong>{{ message.from }}</strong>
+                </div>
+
+                <div>{{ message.message }}</div>
               </div>
+            </v-timeline-item>
+          </v-timeline>
+          <div class="font-weight-bold ms-1 mb-2">от 60 000 руб.</div>
+        </v-card-text>
+      </v-card>
+    </v-col>
 
-              <div>{{ message.message }}</div>
-            </div>
-          </v-timeline-item>
-        </v-timeline>
-        <div class="font-weight-bold ms-1 mb-2">от 60 000 руб.</div>
-      </v-card-text>
-    </v-card>
+
+
   </v-row>
 </v-container>
 </template>

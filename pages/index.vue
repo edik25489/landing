@@ -2,6 +2,7 @@
 import { ref, watch } from 'vue'
 import SectionHero from "~/components/SectionHero.vue";
 import SectionFramework from "~/components/SectionFramework.vue";
+import SectionFooter from "~/components/SectionFooter.vue";
 
 const drawer = ref(false)
 const group = ref(null)
@@ -78,6 +79,7 @@ definePageMeta({
     <SectionHero/>
     <SectionFramework/>
     <SectionPrice/>
+    <SectionFooter/>
   </v-main>
 
 </template>
