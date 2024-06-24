@@ -34,7 +34,7 @@ const submit = handleSubmit(values => {
 </script>
 
 <template>
-<v-container id="subscribe">
+<v-container>
   <v-row justify="center" class="mb-4">
     <v-col cols="12" align-self="center">
       <p class="text-green-darken-3 text-center text-h5 text-sm-h4">
@@ -47,7 +47,7 @@ const submit = handleSubmit(values => {
       <v-card elevation="10">
         <v-card-title class="text-green-darken-3 text-center justify-center py-2">
           <h1 class="font-weight-bold text-h6 text-basil">
-            Реклама
+            Бонусная программа
           </h1>
         </v-card-title>
         <v-tabs
@@ -172,9 +172,14 @@ const submit = handleSubmit(values => {
         </v-tabs-window>
       </v-card>
     </v-col>
-    <v-col cols="12" md="6">
+    <v-col cols="12" md="6" id="subscribe">
       <v-sheet elevation="10" class="pa-3">
         <form @submit.prevent="submit">
+          <v-sheet class="text-green-darken-3 text-center justify-center py-2">
+            <h1 class="font-weight-bold text-h6 text-basil">
+              Заявка на разработку сайта
+            </h1>
+          </v-sheet>
           <v-text-field
               v-model="name.value.value"
               :error-messages="name.errorMessage.value"
