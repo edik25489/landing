@@ -32,7 +32,11 @@
             Поддержка и сопровождение
           </v-list-item>
         </v-list>
-        <v-btn width="400" elevation="8" class="mt-4">
+        <v-btn
+            href="#subscribe"
+            width="400"
+            elevation="8"
+            class="mt-4">
           <template #prepend>
             <v-icon color="green" icon="mdi-bell-plus"></v-icon>
           </template>
@@ -49,7 +53,7 @@
       <v-col sm="6">
         <v-row class="d-flex justify-space-around">
           <v-col sm="4">
-            <v-sheet color="#F1F5F9" height="80" class="w-100 rounded-te-pill"></v-sheet>
+            <v-sheet color="#9098af" height="80" class="w-100 rounded-te-pill"></v-sheet>
           </v-col>
           <v-col sm="4">
             <v-sheet color="#FFE3FB" height="80" class="w-100 rounded-t-pill"></v-sheet>
@@ -65,7 +69,7 @@
     </v-row>
     <v-row class="d-none d-sm-flex">
       <v-col sm="2">
-        <v-sheet color="#F1F5F9" height="80" class="w-100 rounded-be-pill"></v-sheet>
+        <v-sheet color="#9098af" height="80" class="w-100 rounded-be-pill"></v-sheet>
       </v-col>
       <v-col sm="10">
         <v-sheet color="#FFDD58" height="80" class="w-100 rounded-b-pill"></v-sheet>

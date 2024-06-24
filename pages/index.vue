@@ -79,6 +79,7 @@ definePageMeta({
     <SectionHero/>
     <SectionFramework/>
     <SectionPrice/>
+    <SectionSubscribe/>
     <SectionFooter/>
   </v-main>
 

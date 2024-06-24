@@ -9,26 +9,26 @@ const icons = [
 </script>
 
 <template>
-  <v-footer class="d-flex flex-column">
-    <div class="pa-5 bg-teal d-flex w-100 align-center">
-
+  <v-footer color="black" class="d-flex flex-column">
+    <v-sheet color="black" class="d-flex w-100 align-center" no-gutters>
       <v-spacer></v-spacer>
-
+      <p>Контактные данные:</p>
       <v-btn
           v-for="item in icons"
           :key="item.name"
           :prepend-icon="item.icon"
           class="mx-4"
+          target="_blank"
           variant="tonal"
           :href="item.href"
       >
         {{item.name}}
       </v-btn>
-    </div>
+    </v-sheet>
 
-    <div class="py-2 bg-black text-center w-100">
+    <v-sheet class="py-2 bg-black text-center w-100">
       {{ new Date().getFullYear() }} — <strong>Попутный ветер</strong>
-    </div>
+    </v-sheet>
   </v-footer>
 </template>
 

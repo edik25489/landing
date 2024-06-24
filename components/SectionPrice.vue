@@ -167,7 +167,7 @@ const max = [
           <v-timeline align="start" density="compact">
             <v-timeline-item
                 v-for="message in max"
-                :key="message.time"
+                :key="message.from"
                 :dot-color="message.color"
                 size="x-small"
             >
